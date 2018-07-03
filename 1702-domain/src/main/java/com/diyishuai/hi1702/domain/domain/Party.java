@@ -17,11 +17,12 @@ public class Party {
 
     protected String name;
 
-    @Column(name = "create_time")
-    protected Date createTime;
+    public Party() {
+    }
 
-    @Column(name = "update_time")
-    protected Date updateTime;
+    public Party(String name) {
+        this.name = name;
+    }
 
     public Long getId() {
         return id;
@@ -39,19 +40,4 @@ public class Party {
         this.name = name;
     }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
 }

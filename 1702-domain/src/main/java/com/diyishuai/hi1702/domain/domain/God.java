@@ -16,6 +16,23 @@ public class God {
 
     protected String name;
 
+    protected String email;
+
+    public God() {
+    }
+
+    public God(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Long getId() {
         return id;
