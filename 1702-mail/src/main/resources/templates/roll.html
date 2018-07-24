@@ -57,10 +57,20 @@
                                                                         <b th:text="${name}"></b><b>，又到了每天一ROLL的环节!</b>
                                                                     </td>
                                                                 </tr>
-                                                                <tr>
+                                                                <tr th:each="rollInfo,rollInfoStat : ${rollInfoList}">
                                                                     <td align="left" valign="top"
                                                                         style="font-size:15px; color:#7b7b7b; font-size:14px; line-height: 25px; font-family:Hiragino Sans GB; padding: 20px 0px 20px 0px">
-                                                                        <p th:text="今天您Roll到了"/>
+
+
+                                                                                <span>今天您在 </span>
+                                                                                <span th:text=" ${rollInfo.partyName} " style="font-weight: bold;"></span>
+                                                                                <span> 中Roll到了 </span>
+                                                                                <span th:text="${rollInfo.roll}" style="font-weight: bold;"></span>
+                                                                                <span>，本Party中</span>
+                                                                                <span th:text=" ${rollInfo.rollMinName} " style="font-weight: bold;"></span>
+                                                                                <span> Roll到了最小值 </span>
+                                                                                <span th:text="${rollInfo.rollMin}" style="font-weight: bold;"></span>
+
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -71,11 +81,11 @@
                                                                             <tbody>
                                                                             <tr>
                                                                                 <td>
-<span style="font-family:Hiragino Sans GB;font-size:17px;">
-
-<div style="padding:10px 25px 10px 25px;border-radius:3px;text-align:center;text-decoration:none;background-color:#0a82e4;color:#ffffff;font-size:17px;margin:0;white-space:nowrap"><p th:text="Roll到了"/>
-</div>
-</span>
+                                                                                <span style="font-family:Hiragino Sans GB;font-size:17px;">
+                                                                                <!--<div style="padding:10px 25px 10px 25px;border-radius:3px;text-align:center;text-decoration:none;background-color:#0a82e4;color:#ffffff;font-size:17px;margin:0;white-space:nowrap">-->
+                                                                                    <!--<p th:text="Roll到了"/>-->
+                                                                                <!--</div>-->
+                                                                                </span>
                                                                                 </td>
                                                                             </tr>
                                                                             </tbody>

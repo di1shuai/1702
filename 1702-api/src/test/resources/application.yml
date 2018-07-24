@@ -25,10 +25,9 @@ spring:
       hibernate.enable_lazy_load_no_trans: true
 
   mail:
-    host: smtp.gmail.com
+    host: smtp.163.com
     port: 465
-#    port: 587
-    username: diyishuai2018@gmail.com
+    username: diyishuai2018@163.com
     password: hello1702
     properties:
       mail.smtp.auth: true
