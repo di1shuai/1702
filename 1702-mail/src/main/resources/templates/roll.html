@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Centrixlink">
+    <title>diyishuai Roll</title>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody>
+    <tr>
+        <td bgcolor="#f7f9fa" align="center" style="padding:22px 0 20px 0" class="responsive-table">
+            <table border="0" cellpadding="0" cellspacing="0"
+                   style="background-color:f7f9fa; border-radius:3px;border:1px solid #dedede;margin:0 auto; background-color:#ffffff"
+                   width="552" class="responsive-table">
+                <tbody>
+                <tr>
+                    <td bgcolor="#E6E6E6" height="54" align="center"
+                        style="border-top-left-radius:3px;border-top-right-radius:3px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                            <tr>
+                                <td align="center" class="zhwd-high-res-img-wrap zhwd-zhihu-logo"><a
+                                        href="https://centrixlink.com"
+                                        target="_blank"><img
+                                        src="https://www.centrixlink.com/templets/centrixlink/images/logo.png"
+                                        height="45"
+                                        style="outline:none; display:block; border:none; font-size:14px; font-family:Hiragino Sans GB; color:#ffffff;"></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#ffffff" align="center" style="padding: 0 15px 0px 15px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="480" class="responsive-table">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <table cellpadding="0" cellspacing="0" border="0" align="left"
+                                                       class="responsive-table">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td width="550" align="left" valign="top">
+                                                            <table width="100%" border="0" cellpadding="0"
+                                                                   cellspacing="0">
+
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td bgcolor="#ffffff" align="left"
+                                                                        style="background-color:#ffffff; font-size: 17px; color:#7b7b7b; padding:28px 0 0 0;line-height:25px;">
+                                                                        <b th:text="${name}"></b><b>，又到了每天一ROLL的环节!</b>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left" valign="top"
+                                                                        style="font-size:15px; color:#7b7b7b; font-size:14px; line-height: 25px; font-family:Hiragino Sans GB; padding: 20px 0px 20px 0px">
+                                                                        <p th:text="今天您Roll到了${roll}"/>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="border-bottom:1px #f1f4f6 solid; padding: 10px 0 35px 0;"
+                                                                        align="center" class="padding">
+                                                                        <table border="0" cellspacing="0"
+                                                                               cellpadding="0" class="responsive-table">
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td>
+<span style="font-family:Hiragino Sans GB;font-size:17px;">
+<a style="text-decoration:none;color:#ffffff;"
+   th:href="${url}"
+   target="_blank">
+<div style="padding:10px 25px 10px 25px;border-radius:3px;text-align:center;text-decoration:none;background-color:#0a82e4;color:#ffffff;font-size:17px;margin:0;white-space:nowrap"><p th:text="${rollMinName}Roll到了${rollMin}"/>
+</div>
+</a>
+</span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left" valign="top"
+                                                                        style="font-size:15px; color:#7b7b7b; font-size:14px; line-height: 25px; font-family:Hiragino Sans GB; padding: 20px 0px 35px 0px">
+                                                                        喝最烈的酒<br/>
+                                                                        和世间最动人的女子<br/>
+                                                                        看天下最美的风景
+
+                                                                    </td>
+                                                                </tr>
+
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

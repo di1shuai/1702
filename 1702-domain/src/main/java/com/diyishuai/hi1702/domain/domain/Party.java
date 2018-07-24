@@ -1,5 +1,7 @@
 package com.diyishuai.hi1702.domain.domain;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -8,6 +10,7 @@ import java.util.Date;
  * @since 2018/6/30
  */
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name = "party")
 public class Party {
 
@@ -40,4 +43,11 @@ public class Party {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Party{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

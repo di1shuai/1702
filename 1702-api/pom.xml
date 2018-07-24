@@ -31,6 +31,10 @@
             <groupId>com.diyishuai.1702</groupId>
             <artifactId>1702-common</artifactId>
             <version>${parent.version}</version>
+        </dependency><dependency>
+            <groupId>com.diyishuai.1702</groupId>
+            <artifactId>1702-mail</artifactId>
+            <version>${parent.version}</version>
         </dependency>
 
     </dependencies>

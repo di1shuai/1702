@@ -1,5 +1,9 @@
 package com.diyishuai.hi1702.domain.domain;
 
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -8,6 +12,7 @@ import java.util.Date;
  * @since 2018/6/30
  */
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name = "god_party")
 public class GodParty {
 
@@ -20,8 +25,10 @@ public class GodParty {
     protected Long partyId;
     @Column(name = "roll_taday")
     protected Integer rollTaday;
+    @CreatedDate
     @Column(name = "create_time")
     protected Date createTime;
+    @LastModifiedDate
     @Column(name = "update_time")
     protected Date updateTime;
 
@@ -71,5 +78,17 @@ public class GodParty {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    @Override
+    public String toString() {
+        return "GodParty{" +
+                "id=" + id +
+                ", godId=" + godId +
+                ", partyId=" + partyId +
+                ", rollTaday=" + rollTaday +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
     }
 }

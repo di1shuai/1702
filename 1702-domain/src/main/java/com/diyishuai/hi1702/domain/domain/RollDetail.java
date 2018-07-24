@@ -1,5 +1,8 @@
 package com.diyishuai.hi1702.domain.domain;
 
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -8,6 +11,7 @@ import java.util.Date;
  * @since 2018/6/30
  */
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name = "roll_detail")
 public class RollDetail {
 
@@ -18,6 +22,7 @@ public class RollDetail {
     protected Long godPartyId;
     @Column(name = "roll_num")
     protected Integer rollNum;
+    @CreatedDate
     @Column(name = "create_time")
     protected Date createTime;
 
@@ -51,5 +56,15 @@ public class RollDetail {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    @Override
+    public String toString() {
+        return "RollDetail{" +
+                "id=" + id +
+                ", godPartyId=" + godPartyId +
+                ", rollNum=" + rollNum +
+                ", createTime=" + createTime +
+                '}';
     }
 }

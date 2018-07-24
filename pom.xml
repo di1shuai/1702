@@ -7,6 +7,7 @@
         <module>1702-api</module>
         <module>1702-domain</module>
         <module>1702-common</module>
+        <module>1702-mail</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -22,6 +22,18 @@ spring:
     hibernate:
       ddl-auto: update
 
+# mail
+  mail:
+    host: smtp.mxhichina.com
+    port: 25
+    username: diyishuai2018@gmail.com
+    password: hello1702
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+
+
+
 # Logging
 logging:
   config: classpath:logback-spring.xml

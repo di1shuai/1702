@@ -4,6 +4,7 @@ import com.diyishuai.hi1702.domain.AutoConfig;
 import com.diyishuai.hi1702.domain.dao.GodDao;
 import com.diyishuai.hi1702.domain.dao.GodPartyDao;
 import com.diyishuai.hi1702.domain.dao.PartyDao;
+import com.diyishuai.hi1702.domain.dao.RollDetailDao;
 import com.diyishuai.hi1702.domain.domain.God;
 import com.diyishuai.hi1702.domain.domain.GodParty;
 import com.diyishuai.hi1702.domain.domain.Party;
@@ -11,17 +12,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * @author Bruce
  * @since 2018/7/3
  */
-//@ComponentScan(basePackages = {"com.diyishuai"})
-//@EntityScan(basePackages = {"com.diyishuai.hi1702.domain.domain"})
+@EnableJpaAuditing
 @SpringBootTest(classes = {AutoConfig.class})
 @RunWith(SpringJUnit4ClassRunner.class)
-public class DBInit {
+public class DBManage {
 
     @Autowired
     GodDao godDao;
@@ -31,6 +32,9 @@ public class DBInit {
 
     @Autowired
     GodPartyDao godPartyDao;
+
+    @Autowired
+    RollDetailDao rollDetailDao;
 
     @Test
     public void init(){
@@ -65,9 +69,14 @@ public class DBInit {
         godPartyDao.save(ji1702);
         godPartyDao.save(yu1702);
 
+    }
 
-
-
+    @Test
+    public void clean(){
+        godDao.deleteAll();
+        godPartyDao.deleteAll();
+        partyDao.deleteAll();
+        rollDetailDao.deleteAll();
     }
 
 }
