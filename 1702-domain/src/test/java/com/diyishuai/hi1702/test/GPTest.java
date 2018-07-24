@@ -1,7 +1,9 @@
 package com.diyishuai.hi1702.test;
 
 import com.diyishuai.hi1702.domain.AutoConfig;
+import com.diyishuai.hi1702.domain.dao.GodDao;
 import com.diyishuai.hi1702.domain.dao.GodPartyDao;
+import com.diyishuai.hi1702.domain.domain.God;
 import com.diyishuai.hi1702.domain.domain.GodParty;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +24,9 @@ public class GPTest {
     @Autowired
     GodPartyDao godPartyDao;
 
+    @Autowired
+    GodDao godDao;
+
     @Test
     public void gpTest(){
         List<GodParty> allPartyMinRoll = godPartyDao.getAllPartyMinRoll();
@@ -30,4 +35,11 @@ public class GPTest {
         });
 
     }
+
+    @Test
+    public void godTest(){
+        List<God> all = godDao.findAll();
+        System.out.println(all);
+    }
+
 }

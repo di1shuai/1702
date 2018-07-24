@@ -43,11 +43,11 @@ public class EmailService {
             helper.setText(html, true);
             helper.setSubject(mail.getSubject());
             helper.setFrom(mail.getFrom());
-
+            logger.info("email start send...");
             emailSender.send(message);
-            logger.info("email send success : ");
+            logger.info("email send over -> success");
         } catch (MessagingException e) {
-            logger.error("email send fail : ");
+            logger.error("email send over -> fail");
         }
 
     }

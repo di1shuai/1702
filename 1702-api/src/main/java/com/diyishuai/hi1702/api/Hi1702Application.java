@@ -21,6 +21,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class Hi1702Application {
 
     public static void main(String[] args) {
+
         SpringApplication.run(Hi1702Application.class,args);
     }
 

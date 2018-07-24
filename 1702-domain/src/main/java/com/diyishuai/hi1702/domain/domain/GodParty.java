@@ -5,6 +5,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -14,15 +15,20 @@ import java.util.Date;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "god_party")
-public class GodParty {
+public class GodParty implements Serializable {
 
     @Id
     @GeneratedValue
     protected Long id;
-    @Column(name = "god_id")
-    protected Long godId;
-    @Column(name = "party_id")
-    protected Long partyId;
+
+    @ManyToOne
+    @JoinColumn(name = "god_id")
+    protected God god;
+
+    @ManyToOne
+    @JoinColumn(name = "party_id")
+    protected Party party;
+
     @Column(name = "roll_taday")
     protected Integer rollTaday;
     @CreatedDate
@@ -38,22 +44,6 @@ public class GodParty {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getGodId() {
-        return godId;
-    }
-
-    public void setGodId(Long godId) {
-        this.godId = godId;
-    }
-
-    public Long getPartyId() {
-        return partyId;
-    }
-
-    public void setPartyId(Long partyId) {
-        this.partyId = partyId;
     }
 
     public Integer getRollTaday() {
@@ -80,12 +70,28 @@ public class GodParty {
         this.updateTime = updateTime;
     }
 
+    public God getGod() {
+        return god;
+    }
+
+    public void setGod(God god) {
+        this.god = god;
+    }
+
+    public Party getParty() {
+        return party;
+    }
+
+    public void setParty(Party party) {
+        this.party = party;
+    }
+
     @Override
     public String toString() {
         return "GodParty{" +
                 "id=" + id +
-                ", godId=" + godId +
-                ", partyId=" + partyId +
+//                ", god=" + god +
+//                ", party=" + party +
                 ", rollTaday=" + rollTaday +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +

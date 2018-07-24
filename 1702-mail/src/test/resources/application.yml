@@ -1,0 +1,14 @@
+application:
+  name: hi1702
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: diyishuai2018@gmail.com
+    password: hello1702
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.ssl.enable: true

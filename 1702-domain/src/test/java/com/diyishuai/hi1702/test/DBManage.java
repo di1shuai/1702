@@ -54,16 +54,16 @@ public class DBManage {
         System.out.println(party.getId());
 
         GodParty shuai1702 = new GodParty();
-        shuai1702.setGodId(shuai.getId());
-        shuai1702.setPartyId(party.getId());
+        shuai1702.setGod(shuai);
+        shuai1702.setParty(party);
 
         GodParty ji1702 = new GodParty();
-        ji1702.setGodId(ji.getId());
-        ji1702.setPartyId(party.getId());
+        ji1702.setGod(ji);
+        ji1702.setParty(party);
 
         GodParty yu1702 = new GodParty();
-        yu1702.setGodId(yu.getId());
-        yu1702.setPartyId(party.getId());
+        yu1702.setGod(yu);
+        yu1702.setParty(party);
 
         godPartyDao.save(shuai1702);
         godPartyDao.save(ji1702);
@@ -73,9 +73,9 @@ public class DBManage {
 
     @Test
     public void clean(){
-        godDao.deleteAll();
         godPartyDao.deleteAll();
         partyDao.deleteAll();
+        godDao.deleteAll();
         rollDetailDao.deleteAll();
     }
 

@@ -21,16 +21,22 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate.enable_lazy_load_no_trans: true
 
-# mail
   mail:
-    host: smtp.mxhichina.com
-    port: 25
+    host: smtp.gmail.com
+    port: 465
+#    port: 587
     username: diyishuai2018@gmail.com
     password: hello1702
-    properties.mail.smtp.auth: true
-    properties.mail.smtp.starttls.enable: true
-    properties.mail.smtp.starttls.required: true
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.ssl.enable: true
+      mail.smtp.connecttimeout: 10000
+      mail.smtp.timeout: 10000
 
 
 
