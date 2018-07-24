@@ -92,7 +92,6 @@ public class RollTask {
                 );
                 model.put("name",god.getName());
                 model.put("rollInfoList",rollInfoVOList);
-                model.put("url","");
                 mail.setModel(model);
                 emailService.sendSimpleMessage(mail);
             }
