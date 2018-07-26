@@ -1,6 +1,7 @@
 package com.diyishuai.hi1702.domain.domain;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -21,20 +22,26 @@ public class GodAccount {
     /**
      * 当前使用人
      */
-    @Column(name = "user_id",columnDefinition = "bigint(20)")
+    @Column(columnDefinition = "bigint(20)")
     private Integer userId;
 
     /**
      * 花费时间
      */
-    @Column(name = "spend_time",columnDefinition = "datetime")
+    @Column(columnDefinition = "datetime")
     private Date spendTime;
 
     /**
      * 关联主账目id
      */
-    @Column(name = "general_id", columnDefinition = "bigint(20)")
+    @Column(columnDefinition = "bigint(20)")
     private Integer generalId;
+
+    /**
+     * 个人花销
+     */
+    @Column(columnDefinition = "decimal(10,2)")
+    private BigDecimal personalCost;
 
     /**
      *状态  0：待处理  1：已处理

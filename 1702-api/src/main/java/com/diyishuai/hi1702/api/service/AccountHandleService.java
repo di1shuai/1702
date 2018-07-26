@@ -13,23 +13,29 @@ import com.diyishuai.hi1702.domain.domain.GodAccount;
 public interface AccountHandleService {
 
     /**
-     * 查询公共账目
+     * 根据条件查询公共账目
      * @return
      */
     ReturnData selectGeneralLedger(GeneralLedger generalLedger);
 
     /**
-     * 查询个人相关账目
+     * 根据条件查询个人相关账目
      * @return
      */
     ReturnData selectGodAccount(GodAccount godAccount);
 
     /**
-     * 记录账目
+     * 记录主账目
      * @param generalLedger
      * @return
      */
     ReturnData insertGeneralLedger(GeneralLedger generalLedger);
+
+    /**
+     * 支付个人未处理的账目
+     * @return
+     */
+    ReturnData handlePersonal(Integer godId);
 
     /**
      * 使记录账目失效 （权限操作）
